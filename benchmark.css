@@ -95,6 +95,22 @@ footer{
 .button-container{
     text-align: center;
     margin-left: 50px;
-   
-   
+}
+
+.button-clicked{
+    background-color:  #900080;
+}
+#next-button{
+    border-radius: 50px;
+    align-items: center;
+    width: 200px;
+
+    height: 90px;
+    background-color: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+#q-color{
+    color: #900080 ;
 }
