@@ -16,9 +16,11 @@ html,body{
     background-size: cover;
     height: 100%;
 }
+
 #logo{
     display: inline-block;
 }
+
 #logo img{
     
     width:200px;
@@ -30,16 +32,17 @@ html,body{
     margin-bottom: 120px;
 }
  
-#timer{
+#timer-container{
     display: inline-block;
     position: relative;
-    color: white;
+    margin-right: 160px ;
     font-size: larger;
-    width: 200px;
     position: absolute;
     right: 0;
     top: 0;
-    
+    width: 120px;
+    height: 120px;
+    margin-top: 40px;
 }
 
 footer{
@@ -106,58 +109,50 @@ footer{
 #q-color{
     color: #900080 ;
 }
-#circle{
-    border-radius: 50%;
-    width: 88px;
-    height: 88px;
-    padding: 10px;
-    background: #fff;
-    border: 20px solid #0ed1cf;
-    color: #000;
-    text-align: center;
-    font: 32px Arial, sans-serif;
-    background-color: transparent;
-    margin-left: 1648px;
-    margin-top: -56px;
-}
 
-/* #countdown {
+.base-timer {
+    margin-top: 30px;
     position: relative;
-    margin: auto;
-    margin-top: 100px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
+    width: 130px;
+    height: 130px;
   }
   
-  #countdown-number {
-    color: white;
-    display: inline-block; 
-    line-height: 75px;
+  .base-timer__svg {
+    transform: scaleX(-1);
   }
   
-  svg {
-  
-    width: 60px;
-    height: 60px;
-    transform: rotateY(-180deg) rotateZ(-90deg);
-  }
-  
-  svg circle {
-    stroke-dasharray: 113px;
-    stroke-dashoffset: 0px;
-    stroke-linecap: round;
-    stroke-width: 4px;
-    stroke: white;
+  .base-timer__circle {
     fill: none;
-    animation: countdown 10s linear infinite forwards;
+    stroke: none;
   }
   
-  @keyframes countdown {
-    from {
-      stroke-dashoffset: 0px;
-    }
-    to {
-      stroke-dashoffset: 113px;
-    }
-  } */
+  .base-timer__path-elapsed {
+    stroke-width: 11px;
+    stroke: grey;
+  }
+  
+  .base-timer__path-remaining {
+    stroke-width: 11px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+  }
+  
+  .base-timer__path-remaining.green {
+    color: #0ed1cf;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+  }

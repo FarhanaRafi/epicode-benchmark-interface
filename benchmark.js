@@ -69,6 +69,25 @@ let selectedAnswer
 let timer
 let questionCount = 1;
 
+//to cleanup
+
+const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+
+const COLOR_CODES = {
+  info: {
+    color: "green"
+  }
+};
+
+let timeLimit;
+let timePassed = 0;
+let timeLeft;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+
+
 function loadQuestion(){
     if(questionsToDisplay.length == 0){
         console.log(correctAnswers)
@@ -131,22 +150,12 @@ function loadQuestion(){
     } else {
         currentInterval = 30;
     }
+    timeLeft = currentInterval;
+    timeLimit = currentInterval;
 
-    let countdownNumber = document.getElementById("countdown-number")
-    countdownNumber.textContent = currentInterval;
-    
-    timer = setInterval(function(){
-        if(currentInterval > 0) {
-            currentInterval --;
-        } else {
-            clearInterval(timer)
-            loadQuestion()
-        }
-     countdownNumber.textContent = currentInterval;
-    }, 1000);
-
-
+    startTimer(currentInterval)
 }
+
 
 
 function onClickNext(){
@@ -155,7 +164,7 @@ function onClickNext(){
     }else {
         wrongAnswers ++
     }
-    clearInterval(timer)
+    clearInterval(timerInterval);
     loadQuestion()
 }
 
@@ -174,11 +183,75 @@ function onAnswerSelect(event){
 }
  
 
+function setCircleDasharray() {
+    console.log(timeLeft)
+    const circleDasharray = `${(
+      calculateTimeFraction() * FULL_DASH_ARRAY
+    ).toFixed(0)} 283`;
+    document
+      .getElementById("base-timer-path-remaining")
+      .setAttribute("stroke-dasharray", circleDasharray);
+  }
+
+
+function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / timeLimit;
+    return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
+  }
+  
+function startTimer() {
+    timePassed = 0;
+    remainingPathColor = COLOR_CODES.info.color;
+
+    document.getElementById("timer-container").innerHTML = `
+    <div class="base-timer">
+      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="base-timer__circle">
+          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+          <path
+            id="base-timer-path-remaining"
+            stroke-dasharray="283"
+            class="base-timer__path-remaining ${remainingPathColor}"
+            d="
+              M 50, 50
+              m -45, 0
+              a 45,45 0 1,0 90,0
+              a 45,45 0 1,0 -90,0
+            "
+          ></path>
+        </g>
+      </svg>
+      <span id="base-timer-label" class="base-timer__label">
+        </span>
+    </div>
+    `;
+
+
+    timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = timeLimit - timePassed;
+        document.getElementById("base-timer-label").innerHTML = timeLeft
+        
+        setCircleDasharray();
+    
+        if (timeLeft === 0) {
+          onTimesUp();
+        }
+      }, 1000);
+
+}
+
+function onTimesUp() {
+    clearInterval(timerInterval);
+    loadQuestion()
+}
+
 
 
 function onLoadAction(){
     loadQuestion()
 }
+
 
 
 window.onload = onLoadAction
