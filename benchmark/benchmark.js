@@ -188,8 +188,7 @@ function setCircleDasharray() {
     const circleDasharray = `${(
       calculateTimeFraction() * FULL_DASH_ARRAY
     ).toFixed(0)} 283`;
-    document
-      .getElementById("base-timer-path-remaining")
+    document.getElementById("base-timer-path-remaining")
       .setAttribute("stroke-dasharray", circleDasharray);
   }
 
@@ -226,7 +225,6 @@ function startTimer() {
     </div>
     `;
 
-
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = timeLimit - timePassed;
@@ -246,13 +244,9 @@ function onTimesUp() {
     loadQuestion()
 }
 
-
-
 function onLoadAction(){
     loadQuestion()
 }
-
-
 
 window.onload = onLoadAction
 
