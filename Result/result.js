@@ -1,5 +1,5 @@
-let score=2
 
+let score = sessionStorage.getItem("correctAnswers")
 let totalQuestions=10
 
 let diff= totalQuestions-score
