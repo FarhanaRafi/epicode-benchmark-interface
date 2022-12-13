@@ -1,4 +1,4 @@
-let score=6
+let score=2
 
 let totalQuestions=10
 
