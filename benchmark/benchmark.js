@@ -93,7 +93,7 @@ function loadQuestion(){
         console.log(correctAnswers)
         sessionStorage.setItem("correctAnswers", correctAnswers)
         sessionStorage.setItem("wrongAnswers", wrongAnswers)
-        window.location.href = 'result.html';
+        window.location.href = '../Result/result.html';
     }
     let questionNum = document.getElementById("q-num")
     questionNum.innerText = "QUESTION " + questionCount;
