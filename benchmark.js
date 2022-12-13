@@ -72,6 +72,8 @@ let questionCount = 1;
 function loadQuestion(){
     if(questionsToDisplay.length == 0){
         console.log(correctAnswers)
+        sessionStorage.setItem("correctAnswers", correctAnswers)
+        sessionStorage.setItem("wrongAnswers", wrongAnswers)
         window.location.href = 'result.html';
     }
     let questionNum = document.getElementById("q-num")
@@ -130,7 +132,7 @@ function loadQuestion(){
         currentInterval = 30;
     }
 
-    let countdownNumber = document.getElementById("timer")
+    let countdownNumber = document.getElementById("countdown-number")
     countdownNumber.textContent = currentInterval;
     
     timer = setInterval(function(){
@@ -142,7 +144,10 @@ function loadQuestion(){
         }
      countdownNumber.textContent = currentInterval;
     }, 1000);
+
+
 }
+
 
 function onClickNext(){
     if(currentQuestion.answer === selectedAnswer){
