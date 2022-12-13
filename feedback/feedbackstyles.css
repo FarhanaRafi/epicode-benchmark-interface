@@ -18,6 +18,7 @@ header img {
 .main-content {
     text-align: center;
     margin-top: 80px;
+    margin-inline: 160px;
     color: rgb(231, 229, 227);
 }
 
@@ -25,7 +26,6 @@ h1 {
     font-size: 46px;
     margin-bottom: 1px;
 }
-
 
 p {
     font-size: 22px;
@@ -35,8 +35,6 @@ p {
     margin-bottom: 40px;
 /*  width: 80%; */
 }
-
-
 
 hr {
     width: 65%;
@@ -59,27 +57,67 @@ footer {
 }
 
 .more-info {
+   /* animation: glowing 1300ms infinite; */
+
     background-color: #00FFFF;
     border: none;
+    cursor: pointer;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
     font-weight: 800;
     font-size:1.2rem;
-    box-shadow:  
-    0 0 60px 30px #fff,  /* inner white */
-    0 0 100px 60px #f0f, /* middle magenta */
+    box-shadow:
+    0 0 6px 3px #fff,  /* inner white */
+    0 0 10px 6px #f0f, /* middle magenta */
+    0 0 14px 9px #0ff;
+
+    /*
+    0 0 60px 30px #fff,  inner white
+    0 0 100px 60px #f0f,  middle magenta
     0 0 140px 90px #0ff;
-    /* 120px 80px 40px 20px #0ff; */
+    */
+
+    /* 120px 80px 40px 20px #0ff; */   
 }
 
 
 #stars-container {
-    padding: .6em;
     cursor: pointer;
 }
 
+.star {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    /*    border: 1px solid white; */
+}
+
+.star-unselected {
+    fill: #d4d4d4;
+}
+
+.star:hover {
+    transform: scale(1.5);
+}
+
+#hide-original-star {
+    display: none;
+}
+
+/*
+#feedback {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+*/
+
+input {
+    margin-left: 100px;
+}
+
+/* check all of the below as they may be redundant */
 
 .uncheck {
     color: #36454F;
