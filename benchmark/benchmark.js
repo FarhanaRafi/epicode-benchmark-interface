@@ -106,7 +106,7 @@ function loadQuestion(){
     currentQuestion = questionsToDisplay[randomIndex]
     questionAndOptions.classList.add("question-div");
     
-    let question = document.createElement("h1");
+    let question = document.createElement("h2");
     question.innerText = currentQuestion.question;
     questionParent.appendChild(question)
     question.classList.add("question-h1")
@@ -220,7 +220,8 @@ function startTimer() {
           ></path>
         </g>
       </svg>
-      <span id="base-timer-label" class="base-timer__label">
+        <span id="base-timer-label" class="base-timer__label">
+      </div>
         </span>
     </div>
     `;

@@ -23,10 +23,9 @@ html,body{
 
 #logo img{
     
-    width:200px;
-    margin-left: 110px;
-    margin-top: 70px;
-
+    width: 187px;
+    margin-left: 77px;
+    margin-top: 57px;
 }
 #header{
     margin-bottom: 120px;
@@ -40,9 +39,12 @@ html,body{
     position: absolute;
     right: 0;
     top: 0;
-    width: 120px;
+    width: 111px;
+    height: 106px;
+    margin-top: 31px;
+   /* width: 120px;
     height: 120px;
-    margin-top: 40px;
+    margin-top: 40px;*/
 }
 
 footer{
@@ -61,18 +63,39 @@ footer{
     color: white;
     
 }
+/*#questionAndOptions{
+    width: 60%;
+    margin-left: 20%;
+}*/
 
 .question-h1{
     color: white;
     text-align: center;
-    margin-left: 530px;
+    margin-left: 25%;
+    /* margin-right: 190px; */
+    margin-bottom: 40px;
+    width: 56%;
+}
+   /* margin-left: 530px;
     margin-right: 190px;
     margin-bottom: 70px;
-    width: 50%;
+    width: 50%;*/
 
-}
+
 .option-btn{
-    width: 600px;
+    width: 30%;
+    margin-left: 33px;
+    margin-right: 16px;
+    padding: -8px;
+    border-radius: 50px;
+    align-items: center;
+    height: 82px;
+    margin-bottom: 24px;
+    background-color: transparent;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    /*width: 600px;
    margin-left: 50px;
    margin-right: 20px;
     padding: 10px;
@@ -83,7 +106,7 @@ footer{
     background-color: transparent;
     color: white;
     font-size: 28px;
-    cursor: pointer;
+    cursor: pointer;*/
 }
 .button-container{
     text-align: center;
@@ -96,13 +119,13 @@ footer{
 #next-button{
     border-radius: 20px;
     align-items: center;
-    width: 200px;
+    width: 150px;
     margin-left: 80%;
-    margin-top: 40px;
-    height: 90px;
-    background-color:  #900080 ;
+    margin-bottom: 50px;
+    height: 70px;
+    background-color:  #0ed1cf;
     color: white;
-    font-size: 28px;
+    font-size: 23px;
     cursor: pointer;
     position: fixed;
 }
@@ -113,8 +136,8 @@ footer{
 .base-timer {
     margin-top: 30px;
     position: relative;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
   }
   
   .base-timer__svg {
@@ -147,12 +170,12 @@ footer{
   
   .base-timer__label {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
   }
