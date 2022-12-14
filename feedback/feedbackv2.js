@@ -20,9 +20,8 @@ function onLoadActions(selectedStar) {
 
 
         starNode.id = index + 1
+
         // bug here, sometimes selects a lot of stars (more than container) //
-
-
 
         starNode.classList.add('star') // 2) customise star, add CSS class .star
         starNode.innerHTML = star // assign innerHTML to star
