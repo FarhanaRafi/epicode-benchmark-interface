@@ -1,0 +1,82 @@
+body{
+ background-image: url(../assets/bg.jpg);
+ background-size: cover;
+ font-family: "Outfit", sans-serif;
+ 
+}
+img{
+    width: 200px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+#container{
+   width: 100%;
+    text-align: center;
+    padding: 70px;
+}
+
+h1,h2,h3,p{
+    color: white;
+}
+h1{
+    font-size: 50px;
+}
+.top{
+    text-align: center;
+}
+
+#correct,#wrong{
+   
+    display: inline-block;
+}
+#correct{
+    margin-right: 20%;
+}
+#wrong{
+    margin-left: 20%;
+}
+#pass{
+    color:aqua
+}
+#result{
+   
+    margin-top: 40px;
+     
+    padding: 50px;
+    display:inline-block;
+}
+#rate{
+    display: block;
+    width: 200px;
+    height: 50px;
+    border:3px solid white;
+    background: transparent;
+    color: white;
+    margin: auto;
+    margin-top: 150px;
+    font-size: 20px;
+   box-sizing: border-box;
+ 
+}
+
+svg{
+    position:absolute;
+    overflow: visible;
+}
+
+.track{
+    stroke: aqua;
+    fill:none;
+    stroke-width: 50px;
+    fill: none;
+}
+.progress{
+    fill: none;
+ stroke: #900080;
+ stroke-width: 50px;
+transform: rotate(-90deg);
+transform-origin: center;
+}
+
+
+  

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./result.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../assets/epicode_logo.png" alt="Logo">
+    <div id="container">
+    
+    <h1 class="top"><b>Results</b></h1>
+      <h2 class="top">The summary of your answers:</h2>
+    
+      <div id="correct">
+      <h1>Correct</h1>
+      <h1 id="pass-percentage"></h1>
+      <p id="passed"></p>
+      
+      </div>
+      <svg width="700" height="450">
+        <circle r="150" cx="150" cy="185" class="track" ></circle>
+        <circle r="150" cx="390" cy="25" class="progress" ></circle>
+       </svg>
+      <div id="result">
+        <p id="result-info"></p>
+        <p id="pass"></p>
+        <p id="message"></p>
+      </div>
+    
+      <div id="wrong">
+      <h1>Wrong</h1>
+      <h1 id="fail-percentage"></h1>
+      <p id="failed"></p>
+     </div>
+     <a href="../feedback/feedbackv2.html"> <button id="rate">Rate Us</button></a>
+
+    </div>
+
+   
+ 
+<script src="result.js">
+
+</script>
+</body>
+</html>
