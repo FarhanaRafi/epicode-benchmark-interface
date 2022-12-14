@@ -32,11 +32,14 @@ p{
 li{
     font-weight: 100;
     color: white;
+    padding: 10px;
     
 }
 ul{
+    margin-left: -25px;
     margin-bottom: 80px;
 }
+
 .check{
     display: inline-block;
 }
