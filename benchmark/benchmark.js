@@ -233,5 +233,3 @@ function onLoadAction(){
 }
 
 window.onload = onLoadAction
-
-
