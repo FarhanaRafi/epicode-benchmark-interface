@@ -22,6 +22,7 @@ function onLoadActions(selectedStar) {
 
 
         starNode.id = index + 1
+
         // bug here, sometimes selects a lot of stars (more than container) //
         
 
