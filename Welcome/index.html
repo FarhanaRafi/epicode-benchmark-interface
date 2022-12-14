@@ -22,12 +22,25 @@
         <li> Changing browser tab or opening other windows will <b>invalidate the question</b></li>
         <li>This exam will take approx. <b>0-5 minutes</b></li>
     </ul>
-    <label for="confirm">
-     <input type="checkbox"   id="check">
-    </label>
-     <p class="check" >I promise to answer myself without help from anyone</p>
-    
-     <a  id="link" href="../benchmark/benchmark.html" ><button id="procced" class="check">Procced</button></a>
-    </div>
+
+    <input type="checkbox"   id="check" >
+   
+    <p class="check" >I promise to answer myself without help from anyone</p>
+   
+    <a  id="link" href="" ><button id="procced" class="check">Procced</button></a>
+   </div>
+   <script>
+
+   let link=document.getElementById("link")
+   let href=link.getAttribute("href")
+
+   check.addEventListener("click",function(){
+      if(document.getElementById("check").checked){
+      link.setAttribute("href","../benchmark/benchmark.html")
+      }
+   })
+   
+
+   </script>
 </body>
 </html>
