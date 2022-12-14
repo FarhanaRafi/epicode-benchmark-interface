@@ -44,9 +44,6 @@ html,body{
     width: 111px;
     height: 106px;
     margin-top: 31px;
-   /* width: 120px;
-    height: 120px;
-    margin-top: 40px;*/
 }
 
 footer{
@@ -66,10 +63,6 @@ footer{
     color: white;
     
 }
-/*#questionAndOptions{
-    width: 60%;
-    margin-left: 20%;
-}*/
 
 .question-h1{
     font-family: Outfit,sans-serif;
@@ -78,15 +71,9 @@ footer{
     text-align: center;
     margin-left: 25%;
     top: 80px;
-    /* margin-right: 190px; */
     margin-bottom: 40px;
     width: 56%;
 }
-   /* margin-left: 530px;
-    margin-right: 190px;
-    margin-bottom: 70px;
-    width: 50%;*/
-
 
 .option-btn{
     font-family: 'Inter', sans-serif;
@@ -103,18 +90,6 @@ footer{
     color: white;
     font-size: 16px;
     cursor: pointer;
-    /*width: 600px;
-   margin-left: 50px;
-   margin-right: 20px;
-    padding: 10px;
-    border-radius: 50px;
-    align-items: center;
-    height: 90px;
-    margin-bottom: 30px;
-    background-color: transparent;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;*/
 }
 .button-container{
     text-align: center;
@@ -128,19 +103,11 @@ footer{
     font-family: 'Inter', sans-serif;
     border-radius: 20px;
     align-items: center;
-    
-   
-    /* position: absolute;
-  
-    
-    margin-bottom: 50px;
-    width: 150px;*/
     height: 70px;
     background-color:  #0ed1cf;
     color: white;
     font-size: 23px;
     cursor: pointer;
-    
     margin-left: 75%;
     position: fixed;
     bottom: 90px;
@@ -148,6 +115,7 @@ footer{
     justify-items: center;
     width: 15%;
 }
+
 #q-color{
     color: #900080 ;
 }
@@ -202,14 +170,15 @@ footer{
     justify-content: flex-end;
     
   }
+
   .seconds-label {
     font-family: 'Inter', sans-serif;
     font-size: 8px;
     margin-bottom: -30px;
-    color: #0ed1cf;
+    color: white;
   }
   .seconds-label2{
     font-family: 'Inter', sans-serif;
     font-size: 8px;
-    color: #0ed1cf;
+    color: white;
   }
