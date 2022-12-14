@@ -10,7 +10,7 @@ function onLoadActions(selectedStar) {
         starNode.classList.add('star') // 2) customise star, add CSS class .star
         starNode.innerHTML = star // assign innerHTML to star
         starNode.addEventListener("click", onStarSelect)
-        starNode.id=index
+        starNode.id = index
         document.getElementById('stars-container').appendChild(starNode)[index] // do i need [star] ?? // append it to HTML via the DOM, may need to change this ??
     }
 
@@ -20,7 +20,7 @@ function onLoadActions(selectedStar) {
 
 
         starNode.id = index + 1
-        // bug here, sometimes selects a lot of staras more than container //
+        // bug here, sometimes selects a lot of stars (more than container) //
 
 
 
