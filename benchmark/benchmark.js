@@ -106,7 +106,7 @@ function loadQuestion(){
     currentQuestion = questionsToDisplay[randomIndex]
     questionAndOptions.classList.add("question-div");
     
-    let question = document.createElement("h2");
+    let question = document.createElement("h4");
     question.innerText = currentQuestion.question;
     questionParent.appendChild(question)
     question.classList.add("question-h1")
@@ -229,7 +229,7 @@ function startTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = timeLimit - timePassed;
-        document.getElementById("base-timer-label").innerHTML = timeLeft
+        document.getElementById("base-timer-label").innerHTML = "<span class='seconds-label'>SECONDS</span>" + "<br/>" + timeLeft + "</br>" + "<span class='seconds-label2'>REMAINING</span>"
         
         setCircleDasharray();
     
