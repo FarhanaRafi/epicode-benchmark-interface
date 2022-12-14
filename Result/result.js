@@ -1,7 +1,6 @@
-<<<<<<< Updated upstream
-=======
-let score = sessionStorage.getItem("correctAnswers")
->>>>>>> Stashed changes
+
+
+
 
 let score = sessionStorage.getItem("correctAnswers")
 let totalQuestions=10
