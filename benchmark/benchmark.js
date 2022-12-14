@@ -19,13 +19,13 @@ let originalQAndA = [{
 },{
     number: 4,
     question : "Which can be the input and output devices both?",
-    options: ["Scanner", "Touch screen monitor", "Digitizer", "None of these"],
+    options: ["Scanner", "Touch screen monitor", "Digitizer"],
     answer: "Touch screen monitor",
     level : "hard"
 },{
     number: 5,
     question : "Which is not a correct type of a computer?",
-    options: ["Mini Frame Computer", "Super Computer", "Workstations", "None of these"],
+    options: ["Mini Frame Computer", "Super Computer", "Workstations"],
     answer: "Mini Frame Computer",
     level : "hard"
 },{
@@ -114,31 +114,14 @@ function loadQuestion(){
     let options = document.createElement("div")
     options.classList.add("button-container")
 
-    let option1 = document.createElement("button")
-    option1.innerText = currentQuestion.options[0]
-    option1.classList.add("option-btn")
-    option1.addEventListener("click", onAnswerSelect)
+    for(let i = 0; i < currentQuestion.options.length; i++){
+        let option = document.createElement("button");
+        option.innerText = currentQuestion.options[i];
+        option.classList.add("option-btn");
+        option.addEventListener("click", onAnswerSelect); 
+        options.appendChild(option); 
+    }
 
-
-    let option2 = document.createElement("button")
-    option2.innerText = currentQuestion.options[1]
-    option2.classList.add("option-btn")
-    option2.addEventListener("click", onAnswerSelect)
-
-    let option3 = document.createElement("button")
-    option3.innerText = currentQuestion.options[2]
-    option3.classList.add("option-btn")
-    option3.addEventListener("click", onAnswerSelect)
-
-    let option4 = document.createElement("button")
-    option4.innerText = currentQuestion.options[3]
-    option4.classList.add("option-btn")
-    option4.addEventListener("click", onAnswerSelect)
-
-    options.appendChild(option1)
-    options.appendChild(option2)
-    options.appendChild(option3)
-    options.appendChild(option4)
     questionParent.appendChild(options)
     
     questionsToDisplay.splice(randomIndex, 1);
