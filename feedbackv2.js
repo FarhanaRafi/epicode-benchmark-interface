@@ -2,21 +2,21 @@ function onLoadActions(selectedStar) {
     let starNode = document.getElementById('stars-container') 
     starNode.innerHTML = ""
     
-    for (let index = 0; index <selectedStar; index++) { // visualise 10 stars in container
-        let starNode = document.createElement('stars-container') // 1) change this to container ??
+    for (let index = 0; index <selectedStar; index++) {
+        let starNode = document.createElement('stars-container')
         starNode.innerHTML = ""
-        let star = document.getElementById('star-svg').outerHTML // .onclick = selectStar();
+        let star = document.getElementById('star-svg').outerHTML
 
-        starNode.classList.add('star') // 2) customise star, add CSS class .star
-        starNode.innerHTML = star // assign innerHTML to star
+        starNode.classList.add('star')
+        starNode.innerHTML = star
         starNode.addEventListener("click", onStarSelect)
         starNode.id = index
-        document.getElementById('stars-container').appendChild(starNode)[index] // do i need [star] ?? // append it to HTML via the DOM, may need to change this ??
+        document.getElementById('stars-container').appendChild(starNode)[index]
     }
 
-    for (let index = selectedStar; index < 10; index++) { // visualise 10 stars in container
-        let starNode = document.createElement('stars-container') // 1) change this to container ??
-        let star = document.getElementById('star-svg-uncheck').outerHTML // .onclick = selectStar();
+    for (let index = selectedStar; index < 10; index++) {
+        let starNode = document.createElement('stars-container')
+        let star = document.getElementById('star-svg-uncheck').outerHTML
 
 
         starNode.id = index + 1
@@ -24,16 +24,16 @@ function onLoadActions(selectedStar) {
 
 
 
-        starNode.classList.add('star') // 2) customise star, add CSS class .star
-        starNode.innerHTML = star // assign innerHTML to star
+        starNode.classList.add('star')
+        starNode.innerHTML = star
         starNode.addEventListener("click", onStarSelect)
 
-        document.getElementById('stars-container').appendChild(starNode)[index] // do i need [star] ?? // append it to HTML via the DOM, may need to change this ??
+        document.getElementById('stars-container').appendChild(starNode)[index]
     }
 }
 
 
-window.onload = onLoadActions(3)
+window.onload = onLoadActions(6)
 
 function onStarSelect(event){
     console.log(event.currentTarget.id)
