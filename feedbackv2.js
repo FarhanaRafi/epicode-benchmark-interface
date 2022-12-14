@@ -1,3 +1,5 @@
+// let starNode = document.createElement('stars-container')
+
 function onLoadActions(selectedStar) {
     let starNode = document.getElementById('stars-container') 
     starNode.innerHTML = ""
@@ -21,6 +23,7 @@ function onLoadActions(selectedStar) {
 
         starNode.id = index + 1
         // bug here, sometimes selects a lot of stars (more than container) //
+        
 
 
 
@@ -30,6 +33,7 @@ function onLoadActions(selectedStar) {
 
         document.getElementById('stars-container').appendChild(starNode)[index]
     }
+    
 }
 
 
