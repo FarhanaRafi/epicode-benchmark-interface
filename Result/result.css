@@ -39,11 +39,9 @@ h1{
     color:aqua
 }
 #result{
-    left: 0;
-    right: 0;
+   
     margin-top: 40px;
-     border: 50px solid aqua;
-     border-radius: 50%;
+     
     padding: 50px;
     display:inline-block;
 }
@@ -55,10 +53,29 @@ h1{
     background: transparent;
     color: white;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 150px;
     font-size: 20px;
    box-sizing: border-box;
  
+}
+
+svg{
+    position:absolute;
+    overflow: visible;
+}
+
+.track{
+    stroke: aqua;
+    fill:none;
+    stroke-width: 50px;
+    fill: none;
+}
+.progress{
+    fill: none;
+ stroke: #900080;
+ stroke-width: 50px;
+transform: rotate(-90deg);
+transform-origin: center;
 }
 
 

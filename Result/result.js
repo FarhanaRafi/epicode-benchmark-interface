@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+let score = sessionStorage.getItem("correctAnswers")
+>>>>>>> Stashed changes
 
 let score = sessionStorage.getItem("correctAnswers")
 let totalQuestions=10
@@ -28,9 +32,12 @@ if(score>=6){
   passedQuestions.innerText=`${score} / ${totalQuestions} questions`
   failedQuestions.innerText=`${diff} / ${totalQuestions} questions`
 }else{
-    resultInfo.innerText="We are sorry."
-    result.innerText="You failed the exam."
-    message.innerText="Better luck next time."
+  resultInfo.innerText="We are sorry "
+  result.innerText="You have failed the exam."
+  message.innerText=`We wish you better luck 
+  next time.
+  Check your email to see 
+  the right answers.`
     passPercent.innerText=`${(totalQuestions-diff)*10}%`
     failPercent.innerText=`${diff *10}%`
     passedQuestions.innerText=`${score} / ${totalQuestions} questions`
@@ -39,5 +46,11 @@ if(score>=6){
 
 }
 
-
-
+let progress=document.querySelector(".progress")
+let radius=progress.r.baseVal.value
+let circumference=radius*2*Math.PI
+progress.style.strokeDasharray=circumference
+function setProgress(percent){
+ progress.style.strokeDashoffset=circumference-(percent/100)*circumference
+}
+setProgress(diff*10)
