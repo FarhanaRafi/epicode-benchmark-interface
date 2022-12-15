@@ -14,7 +14,7 @@
         <b>your exam</b>
      </h1>
      <span id="instructions">Instructions</span>
-     <p>We dont't expect most engineers to know the answers to all of these <br>
+     <p>We don't expect most engineers to know the answers to all of these <br>
     questions, so don't worry if you are unsure of a few of them.
     </p>
     <ul>
@@ -27,7 +27,7 @@
    
     <p class="check" >I promise to answer myself without help from anyone</p>
    
-    <a  id="link" href="" ><button id="procced" class="check">Procced</button></a>
+    <a  id="link" href="" ><button id="procced" class="check">Proceed</button></a>
    </div>
    <script>
 
@@ -37,6 +37,8 @@
    check.addEventListener("click",function(){
       if(document.getElementById("check").checked){
       link.setAttribute("href","../benchmark/benchmark.html")
+      }else{
+        link.setAttribute("href","")
       }
    })
    

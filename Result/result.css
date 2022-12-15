@@ -69,6 +69,10 @@ svg{
     fill:none;
     stroke-width: 50px;
     fill: none;
+    animation: clock-animation 3.0s forwards;
+    transform: rotate(-90deg);
+    transform-origin: center;
+
 }
 .progress{
     fill: none;
@@ -78,5 +82,13 @@ transform: rotate(-90deg);
 transform-origin: center;
 }
 
-
+@keyframes clock-animation {
+    0% {
+      stroke-dashoffset: -950;
+    }
+    
+    100% {
+      stroke-dashoffset: 100;
+    }
+}
   
