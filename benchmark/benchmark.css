@@ -98,17 +98,17 @@ footer{
     background-color:  #900080;
 }
 #next-button{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     align-items: center;
     height: 60px;
     background-color: aqua;
     border: 1px aqua solid;
-    font-size: 23px;
+    font-size: 25px;
     cursor: pointer;
     margin-left: 75%;
     position: fixed;
     bottom: 90px;
-    font-weight: bolder;
+    font-weight: bold;
     justify-items: center;
     width: 12%;
 }
