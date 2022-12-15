@@ -23,14 +23,19 @@ let originalQAndA = [
   {
     number: 4,
     question: "Which can be the input and output devices both?",
-    options: ["Scanner", "Touch screen monitor", "Digitizer"],
+    options: ["Scanner", "Touch screen monitor", "Digitizer", "None of these"],
     answer: "Touch screen monitor",
     level: "hard",
   },
   {
     number: 5,
     question: "Which is not a correct type of a computer?",
-    options: ["Mini Frame Computer", "Super Computer", "Workstations"],
+    options: [
+      "Mini Frame Computer",
+      "Super Computer",
+      "Workstations",
+      "None of these",
+    ],
     answer: "Mini Frame Computer",
     level: "hard",
   },
