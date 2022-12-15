@@ -96,8 +96,6 @@ let selectedAnswer;
 let timer;
 let questionCount = 1;
 
-//to cleanup
-
 const FULL_DASH_ARRAY = 283;
 
 const COLOR_CODES = {
@@ -112,6 +110,10 @@ let timeLeft;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
+/*
+This function will load question to the page in random order, if no questions are left it goes to the result page.
+Answers are also shown in random order. 
+*/
 function loadQuestion() {
   if (questionsToDisplay.length == 0) {
     console.log(correctAnswers);
@@ -168,6 +170,10 @@ function loadQuestion() {
   startTimer(currentInterval);
 }
 
+/*
+when next is clicked, the next question is loaded
+and the time interval is also cleared
+*/
 function onClickNext() {
   if (currentQuestion.answer === selectedAnswer) {
     correctAnswers++;
@@ -178,6 +184,10 @@ function onClickNext() {
   loadQuestion();
 }
 
+/* 
+If an option button is clicked, previously selected button is unclicked.
+also clicked button is set as answer.  
+*/
 function onAnswerSelect(event) {
   let allButtons = event.target.parentNode.children;
   for (let i = 0; i < allButtons.length; i++) {
@@ -191,6 +201,9 @@ function onAnswerSelect(event) {
   event.target.classList.add("button-clicked");
 }
 
+/*
+This function is used to generate circle in the timer according to time left
+*/
 function setCircleDasharray() {
   console.log(timeLeft);
   const circleDasharray = `${(
@@ -205,7 +218,10 @@ function calculateTimeFraction() {
   const rawTimeFraction = timeLeft / timeLimit;
   return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
 }
-
+/*
+This is used to set timer to the DOM
+also set interval function is used to update seconds text.
+*/
 function startTimer() {
   timePassed = 0;
   remainingPathColor = COLOR_CODES.info.color;
@@ -252,6 +268,9 @@ function startTimer() {
   }, 1000);
 }
 
+/*
+when current questions time is over it goes to the next question and the timer is cleared
+*/
 function onTimesUp() {
   clearInterval(timerInterval);
   loadQuestion();
