@@ -3,7 +3,6 @@
 html,body{
     margin: 0;
     height: 100%;
-    
     font-size: 1.15rem;
     font-weight: 300;
     letter-spacing: .05em;
@@ -24,7 +23,6 @@ html,body{
 }
 
 #logo img{
-    
     width: 187px;
     margin-left: 77px;
     margin-top: 57px;
@@ -86,7 +84,6 @@ footer{
     align-items: center;
     height: 82px;
     margin-bottom: 24px;
-    /* background-color: transparent; */
     color: white;
     font-size: 16px;
     cursor: pointer;
