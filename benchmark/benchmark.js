@@ -1,72 +1,99 @@
-let originalQAndA = [{
+let originalQAndA = [
+  {
     number: 1,
-    question : "Who found america?",
+    question: "Who found america?",
     options: ["Columbus", "Magellan", "Thomas", "George"],
     answer: "Columbus",
-    level : "medium"
-}, {
+    level: "medium",
+  },
+  {
     number: 2,
-    question : "In computer memory measurement units, PT stands for?",
+    question: "In computer memory measurement units, PT stands for?",
     options: ["Perabyte", "Pexabyte", "Petabyte", "None of these"],
     answer: "Petabyte",
-    level : "easy"
-},{
+    level: "easy",
+  },
+  {
     number: 3,
-    question : "Which is the smallest memory measurement unit in given options?",
+    question: "Which is the smallest memory measurement unit in given options?",
     options: ["Byte", "Micro Byte", "Kilo Byte", "Nibble"],
     answer: "Nibble",
-    level : "medium"
-},{
+    level: "medium",
+  },
+  {
     number: 4,
-    question : "Which can be the input and output devices both?",
+    question: "Which can be the input and output devices both?",
     options: ["Scanner", "Touch screen monitor", "Digitizer"],
     answer: "Touch screen monitor",
-    level : "hard"
-},{
+    level: "hard",
+  },
+  {
     number: 5,
-    question : "Which is not a correct type of a computer?",
+    question: "Which is not a correct type of a computer?",
     options: ["Mini Frame Computer", "Super Computer", "Workstations"],
     answer: "Mini Frame Computer",
-    level : "hard"
-},{
+    level: "hard",
+  },
+  {
     number: 6,
-    question : "Which electronics component is used in first generation computers?",
+    question:
+      "Which electronics component is used in first generation computers?",
     options: ["LSI Chips", "ULSI Chips", "Vacuum Tubes", "None of these"],
     answer: "Vacuum Tubes",
-    level : "medium"
-},{
+    level: "medium",
+  },
+  {
     number: 7,
-    question : "What is the full form of ALU?",
-    options: ["Arithmetic Logic Unit", "Arithmetic Local Unit", "Advance Logical Unit", "None of these"],
+    question: "What is the full form of ALU?",
+    options: [
+      "Arithmetic Logic Unit",
+      "Arithmetic Local Unit",
+      "Advance Logical Unit",
+      "None of these",
+    ],
     answer: "Arithmetic Logic Unit",
-    level : "hard"
-},{
+    level: "hard",
+  },
+  {
     number: 8,
-    question : "What is the full form of CU?",
-    options: ["Compound Unit", "Communication Unit", "Computer Unit", "Control Unit"],
+    question: "What is the full form of CU?",
+    options: [
+      "Compound Unit",
+      "Communication Unit",
+      "Computer Unit",
+      "Control Unit",
+    ],
     answer: "Control Unit",
-    level : "medium"
-},{
+    level: "medium",
+  },
+  {
     number: 9,
-    question : "What is the full form of CPU?",
-    options: ["Central Process Unit", "Central Processing Unit", "Central Programming Unit", "Central Progressive Unit"],
+    question: "What is the full form of CPU?",
+    options: [
+      "Central Process Unit",
+      "Central Processing Unit",
+      "Central Programming Unit",
+      "Central Progressive Unit",
+    ],
     answer: "Central Processing Unit",
-    level : "easy"
-},{
+    level: "easy",
+  },
+  {
     number: 10,
-    question : "Who invented Computer?",
+    question: "Who invented Computer?",
     options: ["Ken Thompson", "Charles Babbage", "Dennis Ritchie", "George"],
     answer: "Charles Babbage",
-    level : "easy"
-}]
+    level: "easy",
+  },
+];
 
 let questionsToDisplay = originalQAndA;
 let currentInterval = 0;
-let currentQuestion
+let currentQuestion;
 let correctAnswers = 0;
 let wrongAnswers = 0;
-let selectedAnswer
-let timer
+let selectedAnswer;
+let timer;
 let questionCount = 1;
 
 //to cleanup
@@ -75,8 +102,8 @@ const FULL_DASH_ARRAY = 283;
 
 const COLOR_CODES = {
   info: {
-    color: "green"
-  }
+    color: "green",
+  },
 };
 
 let timeLimit;
@@ -85,105 +112,100 @@ let timeLeft;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
+function loadQuestion() {
+  if (questionsToDisplay.length == 0) {
+    console.log(correctAnswers);
+    sessionStorage.setItem("correctAnswers", correctAnswers);
+    sessionStorage.setItem("wrongAnswers", wrongAnswers);
+    window.location.href = "../Result/result.html";
+  }
+  let questionNum = document.getElementById("q-num");
+  questionNum.innerText = "QUESTION " + questionCount;
+  questionCount++;
+  let questionParent = document.getElementById("questionAndOptions");
+  questionParent.innerHTML = "";
+  let questionAndOptions = document.createElement("div");
 
-function loadQuestion(){
-    if(questionsToDisplay.length == 0){
-        console.log(correctAnswers)
-        sessionStorage.setItem("correctAnswers", correctAnswers)
-        sessionStorage.setItem("wrongAnswers", wrongAnswers)
-        window.location.href = '../Result/result.html';
-    }
-    let questionNum = document.getElementById("q-num")
-    questionNum.innerText = "QUESTION " + questionCount;
-    questionCount ++
-    let questionParent = document.getElementById("questionAndOptions")
-    questionParent.innerHTML = '';
-    let questionAndOptions = document.createElement("div");
-    
-    let randomIndex = Math.floor(Math.random()*questionsToDisplay.length);
-    currentQuestion = questionsToDisplay[randomIndex]
-    questionAndOptions.classList.add("question-div");
-    
-    let question = document.createElement("h4");
-    question.innerText = currentQuestion.question;
-    questionParent.appendChild(question)
-    question.classList.add("question-h1")
+  let randomIndex = Math.floor(Math.random() * questionsToDisplay.length);
+  currentQuestion = questionsToDisplay[randomIndex];
+  questionAndOptions.classList.add("question-div");
 
-    let options = document.createElement("div")
-    options.classList.add("button-container")
+  let question = document.createElement("h4");
+  question.innerText = currentQuestion.question;
+  questionParent.appendChild(question);
+  question.classList.add("question-h1");
 
-    for(let i = 0; i < currentQuestion.options.length; i++){
-        let option = document.createElement("button");
-        option.innerText = currentQuestion.options[i];
-        option.classList.add("option-btn");
-        option.addEventListener("click", onAnswerSelect); 
-        options.appendChild(option); 
-    }
+  let options = document.createElement("div");
+  options.classList.add("button-container");
 
-    questionParent.appendChild(options)
-    
-    questionsToDisplay.splice(randomIndex, 1);
-    
-    if(currentQuestion.level === "hard"){
-        currentInterval = 90;
-    } else if(currentQuestion.level === "medium"){
-        currentInterval = 60;
-    } else {
-        currentInterval = 30;
-    }
-    timeLeft = currentInterval;
-    timeLimit = currentInterval;
+  for (let i = 0; i < currentQuestion.options.length; i++) {
+    let option = document.createElement("button");
+    option.innerText = currentQuestion.options[i];
+    option.classList.add("option-btn");
+    option.addEventListener("click", onAnswerSelect);
+    options.appendChild(option);
+  }
 
-    startTimer(currentInterval)
+  questionParent.appendChild(options);
+
+  questionsToDisplay.splice(randomIndex, 1);
+
+  if (currentQuestion.level === "hard") {
+    currentInterval = 90;
+  } else if (currentQuestion.level === "medium") {
+    currentInterval = 60;
+  } else {
+    currentInterval = 30;
+  }
+  timeLeft = currentInterval;
+  timeLimit = currentInterval;
+
+  startTimer(currentInterval);
 }
 
-
-
-function onClickNext(){
-    if(currentQuestion.answer === selectedAnswer){
-        correctAnswers ++
-    }else {
-        wrongAnswers ++
-    }
-    clearInterval(timerInterval);
-    loadQuestion()
+function onClickNext() {
+  if (currentQuestion.answer === selectedAnswer) {
+    correctAnswers++;
+  } else {
+    wrongAnswers++;
+  }
+  clearInterval(timerInterval);
+  loadQuestion();
 }
 
-function onAnswerSelect(event){
-    let allButtons = event.target.parentNode.children
-    for(let i = 0; i < allButtons.length; i++){
-        if(allButtons[i].classList.contains("button-clicked")){
-            allButtons[i].classList.remove("button-clicked")
-        } 
+function onAnswerSelect(event) {
+  let allButtons = event.target.parentNode.children;
+  for (let i = 0; i < allButtons.length; i++) {
+    if (allButtons[i].classList.contains("button-clicked")) {
+      allButtons[i].classList.remove("button-clicked");
     }
+  }
 
-    console.log(allButtons)
-    selectedAnswer = event.target.innerText;
-    event.target.classList.add("button-clicked")
-     
+  console.log(allButtons);
+  selectedAnswer = event.target.innerText;
+  event.target.classList.add("button-clicked");
 }
- 
 
 function setCircleDasharray() {
-    console.log(timeLeft)
-    const circleDasharray = `${(
-      calculateTimeFraction() * FULL_DASH_ARRAY
-    ).toFixed(0)} 283`;
-    document.getElementById("base-timer-path-remaining")
-      .setAttribute("stroke-dasharray", circleDasharray);
-  }
-
+  console.log(timeLeft);
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
 
 function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / timeLimit;
-    return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
-  }
-  
-function startTimer() {
-    timePassed = 0;
-    remainingPathColor = COLOR_CODES.info.color;
+  const rawTimeFraction = timeLeft / timeLimit;
+  return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
+}
 
-    document.getElementById("timer-container").innerHTML = `
+function startTimer() {
+  timePassed = 0;
+  remainingPathColor = COLOR_CODES.info.color;
+
+  document.getElementById("timer-container").innerHTML = `
     <div class="base-timer">
       <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <g class="base-timer__circle">
@@ -207,27 +229,31 @@ function startTimer() {
     </div>
     `;
 
-    timerInterval = setInterval(() => {
-        timePassed = timePassed += 1;
-        timeLeft = timeLimit - timePassed;
-        document.getElementById("base-timer-label").innerHTML = "<span class='seconds-label'>SECONDS</span>" + "<br/>" + timeLeft + "</br>" + "<span class='seconds-label2'>REMAINING</span>"
-        
-        setCircleDasharray();
-    
-        if (timeLeft === 0) {
-          onTimesUp();
-        }
-      }, 1000);
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = timeLimit - timePassed;
+    document.getElementById("base-timer-label").innerHTML =
+      "<span class='seconds-label'>SECONDS</span>" +
+      "<br/>" +
+      timeLeft +
+      "</br>" +
+      "<span class='seconds-label2'>REMAINING</span>";
 
+    setCircleDasharray();
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
 }
 
 function onTimesUp() {
-    clearInterval(timerInterval);
-    loadQuestion()
+  clearInterval(timerInterval);
+  loadQuestion();
 }
 
-function onLoadAction(){
-    loadQuestion()
+function onLoadAction() {
+  loadQuestion();
 }
 
-window.onload = onLoadAction
+window.onload = onLoadAction;

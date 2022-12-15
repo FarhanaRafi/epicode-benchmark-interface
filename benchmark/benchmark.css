@@ -86,10 +86,11 @@ footer{
     align-items: center;
     height: 82px;
     margin-bottom: 24px;
-    background-color: transparent;
+    /* background-color: transparent; */
     color: white;
     font-size: 16px;
     cursor: pointer;
+    background-color: 	rgb(220,220,220,.1);
 }
 .button-container{
     text-align: center;
@@ -129,7 +130,7 @@ footer{
   }
 }
 #next-button{
-  animation: glowing 1300ms infinite;
+  animation: glowing 3000ms infinite;
 }
 
 #q-color{
