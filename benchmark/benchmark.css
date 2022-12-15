@@ -86,10 +86,11 @@ footer{
     align-items: center;
     height: 82px;
     margin-bottom: 24px;
-    background-color: transparent;
+    /* background-color: transparent; */
     color: white;
     font-size: 16px;
     cursor: pointer;
+    background-color: 	rgb(220,220,220,.1);
 }
 .button-container{
     text-align: center;
@@ -101,11 +102,10 @@ footer{
 }
 #next-button{
     font-family: 'Inter', sans-serif;
-    border-radius: 20px;
     align-items: center;
-    height: 70px;
-    background-color:  #0ed1cf;
-    color: white;
+    height: 60px;
+    background-color: aqua;
+    border: 1px aqua solid;
     font-size: 23px;
     cursor: pointer;
     margin-left: 75%;
@@ -113,7 +113,24 @@ footer{
     bottom: 90px;
     font-weight: bolder;
     justify-items: center;
-    width: 15%;
+    width: 12%;
+}
+@keyframes glowing {
+  0% {
+    background-color: aqua;
+    box-shadow: 0 0 5px aqua;
+  }
+  50% {
+    background-color: aqua;
+    box-shadow: 0 0 20px aqua;
+  }
+  100% {
+    background-color: aqua;
+    box-shadow: 0 0 5px aqua;
+  }
+}
+#next-button{
+  animation: glowing 3000ms infinite;
 }
 
 #q-color{
