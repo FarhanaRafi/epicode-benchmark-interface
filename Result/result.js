@@ -20,14 +20,14 @@ let failPercent=document.getElementById("fail-percentage")
 
 
 if(score>=6){
-  resultInfo.innerText="Congratiulations!"
+  resultInfo.innerText="Congratulations!"
   result.innerText="You passed the exam."
   message.innerText=`We'll send you the certificate 
-  in few minutes. 
+  in a few minutes. 
   Check your email (including 
   promotions, spam folder).`
-  passPercent.innerText=`${(totalQuestions-diff)*10}%`
-  failPercent.innerText=`${diff *10}%`
+  passPercent.innerText=updated
+  failPercent.innerText=updated2
   passedQuestions.innerText=`${score} / ${totalQuestions} questions`
   failedQuestions.innerText=`${diff} / ${totalQuestions} questions`
 }else{
@@ -37,8 +37,8 @@ if(score>=6){
   next time.
   Check your email to see 
   the right answers.`
-    passPercent.innerText=`${(totalQuestions-diff)*10}%`
-    failPercent.innerText=`${diff *10}%`
+    passPercent.innerHTML=updated
+    failPercent.innerHTML=updated2
     passedQuestions.innerText=`${score} / ${totalQuestions} questions`
     failedQuestions.innerText=`${diff} / ${totalQuestions} questions`
     
@@ -53,3 +53,39 @@ function setProgress(percent){
  progress.style.strokeDashoffset=circumference-(percent/100)*circumference
 }
 setProgress(diff*10)
+
+
+let speed=10
+let counts=setInterval(updated,speed)
+let counts2=setInterval(updated2,speed)
+
+let passUpto=-1
+
+let failUpto=-1
+        function updated(){
+    let pass= document.getElementById("pass-percentage");
+    
+    pass.innerHTML=++passUpto;
+    
+    if(passUpto===(totalQuestions-diff)*10)
+    {
+       clearInterval(counts)
+       pass.innerText=`${passUpto}%`
+       
+    }
+    
+}
+
+function updated2(){
+    let fail=document.getElementById("fail-percentage")
+
+    fail.innerHTML=++failUpto
+
+    if(failUpto===diff*10)
+    {
+        clearInterval(counts2)
+        fail.innerText=`${failUpto}%`
+    }
+}
+
+
