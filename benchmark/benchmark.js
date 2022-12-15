@@ -138,12 +138,17 @@ function loadQuestion() {
   let options = document.createElement("div");
   options.classList.add("button-container");
 
-  for (let i = 0; i < currentQuestion.options.length; i++) {
-    let option = document.createElement("button");
-    option.innerText = currentQuestion.options[i];
-    option.classList.add("option-btn");
-    option.addEventListener("click", onAnswerSelect);
-    options.appendChild(option);
+  let optionCount = currentQuestion.options.length;
+  for (let i = 0; i < optionCount; i++) {
+    let optionButton = document.createElement("button");
+    let randomIndexOption = Math.floor(
+      Math.random() * currentQuestion.options.length
+    );
+    optionButton.innerText = currentQuestion.options[randomIndexOption];
+    currentQuestion.options.splice(randomIndexOption, 1);
+    optionButton.classList.add("option-btn");
+    optionButton.addEventListener("click", onAnswerSelect);
+    options.appendChild(optionButton);
   }
 
   questionParent.appendChild(options);
