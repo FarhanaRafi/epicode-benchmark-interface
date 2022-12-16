@@ -11,22 +11,26 @@ body{
     margin-top: 53px;
    }
    #container{
-      width: 95%;
+      width: 100%;
        margin-left: 70px;
    }
    h1,h2,h3,p{
     color: white;
+}
+h1{
+    margin-bottom: 10px;
 }
 
 h1{
     font-size: 80px;
 }
 #instructions{
-    font-size: 50px;
-    color: #900080;
+    font-size: 30px;
+    color: #d20094;
 }
 p{
     font-weight: 100;
+    
 }
 li{
     font-weight: 100;
@@ -35,6 +39,7 @@ li{
     
 }
 ul{
+    margin-top: 50px;
     margin-left: -25px;
     margin-bottom: 80px;
 }
@@ -50,7 +55,7 @@ input[type=checkbox]+label:before{
 #procced{
     margin-left: 400px;
     height: 60px;
-    width: 180px;
+    width: 230px;
     background-color: aqua;
     border: 1px aqua solid;
     font-size: 25px;
