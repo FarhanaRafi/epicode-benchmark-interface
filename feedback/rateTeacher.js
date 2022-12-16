@@ -4,12 +4,7 @@ function onLoadActions(selectedStar) {
     let starNode = document.getElementById('stars-container') 
     starNode.innerHTML = ""
     selectedStar = parseInt(selectedStar) + 1;
-    
     console.log(selectedStar);
-
-    // alert("You selected " + selectedStar + " stars");
-    
-
     for (let index = 0; index < selectedStar; index++) {
         let starNode = document.createElement('stars-container')
         starNode.innerHTML = ""
@@ -37,8 +32,9 @@ function onLoadActions(selectedStar) {
 
         document.getElementById('stars-container').appendChild(starNode)[index]
     }
-}
 
+}
+    
 
 //  document.body.removeEventListener('click', selectedStar)
 

@@ -1,0 +1,136 @@
+body {
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    color: #fff;
+    font-family: Outfit,sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: .05em;
+    line-height: 1.4;
+}
+
+/* header contains logo */
+header img {
+    width: 187px;
+    margin-left: 77px;
+    margin-top: 57px;
+}
+
+/* main-content div contains h1, p - recommend, stars (JS) */
+
+.main-content {
+    text-align: center;
+    margin-top: 80px;
+    margin-inline: 200px;
+    color: rgb(231, 229, 227);
+}
+
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight:900;
+    color: rgb(233,231,237)
+}
+
+p {
+    font-size: 24px;
+    color: rgb(223,219,229);
+    text-align: center;
+    margin-left: 170px;
+    margin-right: 170px;
+    margin-bottom: 40px;
+}
+
+#stars-container {
+    cursor: pointer;
+}
+
+.star {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    /*    border: 1px solid white; */
+}
+
+.star-unselected {
+    fill: #d4d4d4;
+}
+
+.star:hover {
+    transform: scale(1.5);
+}
+
+
+/* feedback div contains feebdback-text p, input box, hr */
+
+.feedback {
+    margin-top: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+input{
+    color: rgb(88,86,104);
+    font-weight: 100;
+    margin-right: 220px;
+    margin-left: 335px;
+    padding-left: 20px;
+    width: 30%;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    border:none;
+}
+
+hr {
+    width: 53%;
+    border-color: rgb(171,17,130);
+}
+
+
+/* footer contains more-info button */
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.more-info{
+    height: 60px;
+    width: 180px;
+    background-color: aqua;
+    border: 1px aqua solid;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+@keyframes glowing {
+    0% {
+      background-color: aqua;
+      box-shadow: 0 0 5px aqua;
+    }
+    50% {
+      background-color: aqua;
+      box-shadow: 0 0 20px aqua;
+    }
+    100% {
+      background-color: aqua;
+      box-shadow: 0 0 5px aqua;
+    }
+  }
+
+.more-info{
+    animation: glowing 1300ms infinite;
+}
+
+.more-info:hover{
+    transform: scale(1.2)
+}
+
+/*section contains star checked and uncheck hidden*/
+
+#hide-original-star {
+    display: none;
+}
+
