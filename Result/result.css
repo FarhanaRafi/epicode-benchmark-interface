@@ -1,0 +1,94 @@
+body{
+ background-image: url(../assets/bg.jpg);
+ background-size: cover;
+ font-family: "Outfit", sans-serif;
+ 
+}
+img{
+    width: 187px;
+    margin-left: 69px;
+    margin-top: 53px;
+   }
+#container{
+   width: 100%;
+    text-align: center;
+   
+}
+
+h1,h2,h3,p{
+    color: white;
+}
+h1{
+    font-size: 50px;
+}
+.top{
+    text-align: center;
+}
+
+#correct,#wrong{
+   
+    display: inline-block;
+}
+#correct{
+    margin-right: 20%;
+}
+#wrong{
+    margin-left: 20%;
+}
+#pass{
+    color:aqua
+}
+#result{
+   
+    margin-top: 40px;
+     
+    padding: 50px;
+    display:inline-block;
+}
+#rate{
+    display: block;
+    width: 200px;
+    height: 50px;
+    border:3px solid white;
+    background: transparent;
+    color: white;
+    margin: auto;
+    margin-top: 180px;
+    font-size: 20px;
+   box-sizing: border-box;
+ 
+}
+
+svg{
+    position:absolute;
+    overflow: visible;
+}
+
+.track{
+    stroke: aqua;
+    fill:none;
+    stroke-width: 50px;
+    fill: none;
+    animation: clock-animation 3.0s forwards;
+    transform: rotate(-90deg);
+    transform-origin: center;
+
+}
+.progress{
+    fill: none;
+ stroke: #900080;
+ stroke-width: 50px;
+transform: rotate(-90deg);
+transform-origin: center;
+}
+
+@keyframes clock-animation {
+    0% {
+      stroke-dashoffset: -950;
+    }
+    
+    100% {
+      stroke-dashoffset: 100;
+    }
+}
+  
